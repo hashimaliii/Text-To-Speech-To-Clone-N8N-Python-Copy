@@ -1,0 +1,192 @@
+{
+  "info": {
+    "name": "Voice API",
+    "_postman_id": "voice-api-temp",
+    "description": "FastAPI Voice API with temporary voice and PDF storage",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/health",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["health"]
+        }
+      }
+    },
+    {
+      "name": "Upload Voice",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": ""
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/upload-voice",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["upload-voice"]
+        }
+      }
+    },
+    {
+      "name": "Upload PDF",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": ""
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/upload-pdf",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["upload-pdf"]
+        }
+      }
+    },
+    {
+      "name": "List Voices",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/voices",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["voices"]
+        }
+      }
+    },
+    {
+      "name": "List PDFs",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/pdfs",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["pdfs"]
+        }
+      }
+    },
+    {
+      "name": "TTS",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {"key": "text", "value": "Hello world", "type": "text"},
+            {"key": "lang", "value": "en", "type": "text"},
+            {"key": "slow", "value": "false", "type": "text"}
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/tts",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["tts"]
+        }
+      }
+    },
+    {
+      "name": "Clone Voice",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {"key": "text", "value": "Hello world", "type": "text"},
+            {"key": "voice_name", "value": "sample.wav", "type": "text"},
+            {"key": "lang", "value": "en", "type": "text"}
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/clone-voice",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["clone-voice"]
+        }
+      }
+    },
+    {
+      "name": "PDF TTS",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {"key": "pdf_name", "value": "sample.pdf", "type": "text"},
+            {"key": "lang", "value": "en", "type": "text"},
+            {"key": "slow", "value": "false", "type": "text"},
+            {"key": "start_page", "value": "1", "type": "text"},
+            {"key": "end_page", "value": "-1", "type": "text"}
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/pdf-tts",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["pdf-tts"]
+        }
+      }
+    },
+    {
+      "name": "PDF Clone Voice",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {"key": "pdf_name", "value": "sample.pdf", "type": "text"},
+            {"key": "voice_name", "value": "sample.wav", "type": "text"},
+            {"key": "lang", "value": "en", "type": "text"},
+            {"key": "start_page", "value": "1", "type": "text"},
+            {"key": "end_page", "value": "-1", "type": "text"}
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/pdf-clone-voice",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["pdf-clone-voice"]
+        }
+      }
+    }
+  ]
+}
